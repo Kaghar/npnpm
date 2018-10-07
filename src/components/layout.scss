@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:600,700,800');
+
+
+/********** Variables ************/
+$color-one: #FFC631;
+$color-two:#55D7FF; 
+$color-three:#3178b3 ;
+$color-four: #C1ABFF;
+$color-five: #55E82E;
+$color-six:#000;
+$color-seven: #fff;
+
+
+$color-text: #464646;
+$color-text-light:#7e7e7e;
+$color-text-bg:#e0dfdf;
+$color-text-dark: #383838;
+
+
+
+$color-bg-one:#bbbbbb;
+$color-bg-two:#dadada;
+$color-bg-three:#f3f2f2;
+
+
+/************************** SHADOWS **************************/ 
+$shadow-nine: 0 1rem 2rem rgba(0,0,0,.9);
+$shadow-eight: 0 1rem 2rem rgba(0,0,0,.8);
+$shadow-seven: 0 1rem 2rem rgba(0,0,0,.7);
+$shadow-six: 0 1rem 2rem rgba(0,0,0,.6);
+$shadow-five: 0 1rem 2rem rgba(0,0,0,.5);
+$shadow-four: 0 1rem 2rem rgba(0,0,0,.4);
+$shadow-three: 0 .8rem 2rem rgba(0,0,0,.3);
+$shadow-two: 0 1rem 2rem rgba(0,0,0,.2);
+$shadow-one: 0 1rem 2rem rgba(0,0,0,.1);
+
+
+
+   
+/************************** RESPONSIVE BREAKPOINTS **************************/ 
+$bp-xlarge: 85em;
+$bp-largest: 75em;   
+$bp-large: 70em;   
+$bp-medium: 55em;    
+$bp-small: 37.5em;    
+
+
+
+/************* Base ******************/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    
+}
+
+#___gatsby {
+  width: 100vw;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: $color-text;
+    font-family: 'Open Sans', sans-serif;
+    @media only screen and (max-width: $bp-xlarge) {
+        font-size: 55%;
+    }
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+    @media only screen and (max-width: $bp-large) {
+        font-size: 40%;
+    }
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 35%;
+    }
+    
+
+}
+/*************  Buttons  ******************/
+
+.btn {
+  cursor: pointer;
+  padding: .7rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  transition: all .2s;
+  box-shadow: $shadow-three;
+  color: #fff;
+  
+
+  &:hover{
+    transition: all .2s;
+    transform: scale(1.01);
+    
+  }
+
+  &:active {
+    transition: all .2s;
+    transform: scale(.95);
+    box-shadow: $shadow-five;
+  }
+
+  &__Grey{
+    background-color: $color-bg-two;
+    color: $color-text;
+
+    &:hover{
+      transition: all .2s;
+      background-color: $color-bg-one;
+    }
+
+  }
+
+  &__Blue{
+    
+    background-color: $color-three;
+
+    &:hover{
+      background-color: $color-one;
+      transition: all .2s;
+    }
+
+  }
+}
+
+/*************  Typography  ******************/
+
+.heading-1{
+  font-size: 3rem;
+  font-weight: 700;
+
+}
+.heading-2 {
+  font-size: 1.9rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.heading-3 {
+  font-size: 2.5rem;
+}
+
+.heading-4{
+  font-size: 2rem
+}
+
+.heading-5 {
+  font-size: 1.8rem;
+  color: $color-bg-one;
+}
+
+
+/*************  CSS  ******************/
+
+.container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: $bp-large) {
+    padding: 3rem;
+  }
+}
+
+.navigationBox{
+  display:flex;
+  justify-content: flex-start;
+  width: 60%;
+  margin-bottom: 5rem;  
+  border-bottom: 2px solid $color-bg-two;
+  position: absolute;
+  margin: 0 3rem;
+
+    @media only screen and (max-width: $bp-xlarge) {
+      width: 70%;
+    }
+    @media only screen and (max-width: $bp-largest) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $bp-large) {
+      width: 90%;
+      
+    }
+      
+
+  &__item{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $color-text-bg;
+    text-decoration: none;
+    transition: all .2s;
+    margin:2rem 5rem 0 0;
+    
+    &:hover{
+        color: $color-three;
+        transition: all .2s;
+    }
+
+    &-active{
+      color: $color-three;
+      transition: all .2s;
+        
+      &:after{
+        margin-top: 1rem;
+        content: "";
+        background-color: $color-three;
+        display: block;
+        height: 5px;
+        border-radius: 3px;
+        width: 130%;
+        transition: all .2s;
+        z-index: 10;
+        transform: translateY(3px);
+      }
+    }
+  }
+}
+
+.contentBox{
+  margin-top: 10rem;
+  width: 60%;
+  display:flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $bp-xlarge) {
+    width: 70%;
+  }
+  @media only screen and (max-width: $bp-largest) {
+    width: 80%;
+  }
+  @media only screen and (max-width: $bp-large) {
+    width: 90%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    width: 100%;
+  }
+}
+
+.blogBox{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  & h1 {
+    align-self: flex-start;
+    margin-left: 1rem;
+  }
+  
+
+  &__card{
+    border-radius: 5px;
+    box-shadow: $shadow-five;
+    margin: 1rem;
+    height: 32rem;
+    width: 32rem;
+    background-position: center;
+    background-size: cover;
+    transition: all .2s;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    &:hover{
+      transform: scale(1.05);
+      transition: all .2s;
+      box-shadow: $shadow-three;
+    }
+
+    &-smallbox{
+      margin: 2.2rem;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      &--title{
+        margin-bottom: 1rem;
+      }
+      &--btn {
+        
+      }
+
+    }
+  }
+}
+
+.productsBox{
+  
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  
+  &__title{
+    margin-left: 1rem;
+    @media only screen and (max-width: $bp-large) {
+      align-self: center;
+      margin-left: 0;
+    }
+    
+  }
+  &__small{
+    display:flex;
+    flex-wrap: wrap;
+    @media only screen and (max-width: $bp-large) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+
+  }
+
+  &__card{
+    border: 2px solid $color-text-bg;
+    margin: 1rem 3rem 1rem 1rem;
+    border-radius: 5px;
+    box-shadow: $shadow-five;
+    transition: all .2s;
+    height: 32rem;
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center ;
+    padding: 2rem;
+
+    &:hover{
+      transform: scale(1.05);
+      transition: all .2s;
+      box-shadow: $shadow-three;
+    }
+
+    &-img{
+      height: 13rem;
+      width: auto;
+
+    }
+
+    &-smallbox{
+      align-self: stretch;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      & button {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      &--bgstar{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+
+        &--img{
+          filter: grayscale(100%);
+        }
+      }
+      
+
+
+      &--review{
+        font-size: 1.5rem;
+        color: $color-three;
+        border-bottom: 1px solid $color-three;
+      }
+    }
+
+    
+  }
+}
+
+.changelogBox{
+  margin-right: 2rem;
+  width: 100%;
+    
+  &__title{
+    margin-left: 1rem;
+  }
+
+  &__box{
+    
+    margin-bottom: 6rem;
+    
+
+    &-title{
+      margin-top: 1rem;
+      border: 2px solid $color-three;
+      border-radius: 3px;
+      padding: 1rem;
+      box-shadow: $shadow-five;
+      transition: all .2s;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      
+
+      &:hover {
+        transition: all .2s;
+        transform: scale(1.01);
+        box-shadow: $shadow-three;
+      }
+      &:active{
+        transform: scale(.98);
+        box-shadow: $shadow-six;
+        transition: all .2s;
+      }
+    }
+    &-smallbox{
+      
+      padding: 1rem;
+      width: 95%;
+      font-size: 1.5rem;
+      display:none;
+      transition: all .2s;
+
+      &--title{
+        border-bottom: 1px solid $color-three;
+        padding: .5rem;
+      }
+      &--date{
+        padding: .5rem 1rem;
+      }
+      &--text{
+        text-align: justify;
+
+      }
+    }
+  }
+
+}
